@@ -1,0 +1,132 @@
+/* --- Base Styles --- */
+:root {
+    --primary-color: #007bff;
+    --light-color: #f8f9fa;
+    --dark-color: #333;
+    --bg-color: #f0f2f5;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --border-radius: 10px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--dark-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* --- Main Container (The Card) --- */
+.container {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+/* --- Input Section --- */
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#city-input {
+    flex: 1; /* Allows the input to grow and take available space */
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+#get-weather-btn {
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#get-weather-btn:hover {
+    background-color: #0056b3;
+}
+
+/* --- Weather Display Area --- */
+#weather-display {
+    /* Hidden by default, JavaScript will show it */
+    display: none; 
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+#city-name {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+#weather-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#weather-icon {
+    width: 100px;
+    height: 100px;
+}
+
+#temperature {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#description {
+    font-size: 1.2rem;
+    color: #555;
+    text-transform: capitalize; /* e.g., "clear sky" becomes "Clear Sky" */
+    margin-top: 10px;
+}
+
+/* --- Error Message Styling --- */
+#error-message {
+    /* Hidden by default, JavaScript will show it */
+    display: none; 
+    color: #dc3545; /* Red for errors */
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 480px) {
+    .input-section {
+        flex-direction: column; /* Stack input and button on small screens */
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    #temperature {
+        font-size: 2.5rem;
+    }
+}
